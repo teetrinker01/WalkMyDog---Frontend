@@ -1,26 +1,42 @@
 <template>
-  <div>
-    <v-app-bar dense flat>
-      <v-toolbar-title> My Dog Walker</v-toolbar-title>
-    </v-app-bar>
-    <v-img
-      :src="require('../assets/logo.svg')"
-      class="my-3"
-      contain
-      height="200"
-    />
-    <h1>Share the love dogs</h1>
+  <v-card color="grey lighten-4" flat tile>
+    <v-toolbar dense>
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-    <v-btn color="green" dark>
-      <router-link :to="'signup'">SignUp</router-link>
+      <v-toolbar-title>Reboot Academy App</v-toolbar-title>
 
-    </v-btn>
-    <v-btn color="green" dark>
-      LogIn
-    </v-btn>
-  </div>
+      <v-spacer></v-spacer>
+
+      <v-btn icon @click="logout">
+        <v-icon>mdi-exit-to-app</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-dots-vertical</v-icon>
+      </v-btn>
+    </v-toolbar>
+  </v-card>
 </template>
 
 <script>
-export default {};
+// @ is an alias to /src
+
+export default {
+  name: "Home",
+  components: {},
+  methods: {
+    logout() {
+      localStorage.clear();
+      this.$router.push("/");
+    }
+  }
+};
 </script>
