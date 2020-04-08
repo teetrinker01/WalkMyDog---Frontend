@@ -11,10 +11,11 @@
     />
     <h1>Share the love dogs</h1>
 
-    <v-btn color="green" dark v-on="on">
-      <a href="./SignUp.vue">Sign Up</a>
+    <v-btn color="green" dark>
+      <router-link :to="'signup'">SignUp</router-link>
+
     </v-btn>
-    <v-btn color="green" dark v-on="on">
+    <v-btn color="green" dark>
       LogIn
     </v-btn>
   </div>
