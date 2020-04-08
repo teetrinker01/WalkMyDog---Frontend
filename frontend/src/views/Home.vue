@@ -1,42 +1,38 @@
 <template>
-  <v-card color="grey lighten-4" flat tile>
-    <v-toolbar dense>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Reboot Academy App</v-toolbar-title>
-
+  <div>
+    <v-app-bar dense flat>
       <v-spacer></v-spacer>
-
-      <v-btn icon @click="logout">
-        <v-icon>mdi-exit-to-app</v-icon>
+      <v-toolbar-title> My Dog Walker</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+    <v-img
+      :src="require('../assets/logo.svg')"
+      class="my-3"
+      contain
+      height="200"
+    />
+    <h1>Share the love dogs</h1>
+    <div class="buttons">
+      <v-btn depressed rounded small color="blue-grey darken-4">
+        <router-link :to="'signup'">SignUp</router-link>
       </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
+      <v-btn depressed rounded small color="blue-grey darken-4">
+        <router-link :to="'login'">LogIn</router-link>
       </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-toolbar>
-  </v-card>
+    </div>
+  </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
-export default {
-  name: "Home",
-  components: {},
-  methods: {
-    logout() {
-      localStorage.clear();
-      this.$router.push("/");
-    }
-  }
-};
+export default {};
 </script>
+<style lang="css" scoped>
+h1 {
+  text-align: center;
+  font-weight: 400;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+</style>

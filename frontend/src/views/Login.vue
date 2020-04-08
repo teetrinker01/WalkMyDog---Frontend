@@ -1,14 +1,14 @@
 <template>
   <div>
-    <Signup />
+    <Login />
   </div>
 </template>
 
 <script>
-import Signup from "../components/Signup";
+import Login from "../components/Login";
 export default {
   components: {
-    Signup
+    Login
   }
 };
 </script>
