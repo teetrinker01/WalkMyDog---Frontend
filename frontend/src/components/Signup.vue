@@ -7,7 +7,7 @@
       <v-card-text>
         <v-form>
           <v-text-field
-            label="Username"
+            label="Name"
             v-model="username"
             prepend-icon="mdi-account-circle"
             :rules="userRules"
@@ -29,6 +29,41 @@
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="showPassword = !showPassword"
           ></v-text-field>
+
+          <v-text-field
+            label="Phone"
+            v-model="phone"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
+          ></v-text-field>
+
+          <v-text-field
+            label="DNI"
+            v-model="dni"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
+          ></v-text-field>
+
+          <v-text-field
+            label="Address"
+            v-model="address"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
+          ></v-text-field>
+
+          <v-text-field
+            label="Zip Code"
+            v-model="zipCode"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
+          ></v-text-field>
+
+          <v-text-field
+            label="City"
+            v-model="city"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
+          ></v-text-field>
         </v-form>
       </v-card-text>
       <v-divider></v-divider>
@@ -46,18 +81,23 @@ export default {
   data() {
     return {
       showPassword: false,
-      userPassword: "Chiken123456",
+      userPassword: "",
       passwordRule: [
         v => !!v || "Password is required",
         v => v.length >= 10 || "Password must be more than 10 characters"
       ],
-      username: "Chiken",
+      username: "",
       userRules: [v => !!v || "Username is required"],
-      email: "a@a.com",
+      email: "",
       emailRules: [
         v => !!v || "E-mail is required",
         v => /.+@.+\..+/.test(v) || "E-mail must be valid"
-      ]
+      ],
+      phone: "",
+      dni: "",
+      address: "",
+      zipCode: "",
+      city: ""
     };
   },
   methods: {
