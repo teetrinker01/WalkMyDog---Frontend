@@ -12,7 +12,7 @@
     <h1>Share the love dogs</h1>
 
     <v-btn color="green" dark v-on="on">
-      <a href="./views.SignUp.vue">Sign Up</a>
+      <a href="./SignUp.vue">Sign Up</a>
     </v-btn>
     <v-btn color="green" dark v-on="on">
       LogIn

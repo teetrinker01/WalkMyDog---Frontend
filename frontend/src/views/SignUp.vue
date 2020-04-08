@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-form ref="form" v-model="valid" lazy-validation>
+    <v-form class="form" ref="form" v-model="valid" lazy-validation>
       <v-text-field
         v-model="name"
         :counter="10"
@@ -49,3 +49,8 @@
 <script>
 export default {};
 </script>
+<style lang="scss" scoped>
+.form {
+  width: 50%;
+}
+</style>
