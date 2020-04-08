@@ -8,7 +8,7 @@
         <v-form>
           <v-text-field
             label="Name"
-            v-model="username"
+            v-model="name"
             prepend-icon="mdi-account-circle"
             :rules="userRules"
           ></v-text-field>
@@ -22,7 +22,7 @@
 
           <v-text-field
             label="Password"
-            v-model="userPassword"
+            v-model="password"
             :type="showPassword ? 'text' : 'password'"
             prepend-icon="mdi-lock"
             :rules="passwordRule"
@@ -81,37 +81,42 @@ export default {
   data() {
     return {
       showPassword: false,
-      userPassword: "",
+      password: "benta12345",
       passwordRule: [
         v => !!v || "Password is required",
         v => v.length >= 10 || "Password must be more than 10 characters"
       ],
-      username: "",
+      name: "Benta",
       userRules: [v => !!v || "Username is required"],
-      email: "",
+      email: "benta@walk.com",
       emailRules: [
         v => !!v || "E-mail is required",
         v => /.+@.+\..+/.test(v) || "E-mail must be valid"
       ],
-      phone: "",
-      dni: "",
-      address: "",
-      zipCode: "",
-      city: ""
+      phone: "632541875",
+      dni: "78541254E",
+      address: "Calle Mesa y Lopez",
+      zipCode: "35000",
+      city: "Las Palmas"
     };
   },
   methods: {
     signup() {
       const newUser = {
-        user_name: this.username,
-        user_email: this.email,
-        user_password: this.userPassword
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        city: this.city,
+        zipCode: this.zipCode,
+        address: this.address,
+        dni: this.dni,
+        phone: this.phone
       };
 
       APIServices.signup(newUser)
         .then(response => {
           localStorage.setItem("token", response.token);
-          this.$router.push("/home");
+          this.$router.push("/about");
         })
         .catch(err => console.log(err));
     }

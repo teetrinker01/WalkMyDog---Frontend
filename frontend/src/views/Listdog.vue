@@ -1,11 +1,13 @@
 <template>
   <div>
+    <Navbar />
     <Verticalsearchbar />
   </div>
 </template>
 
 <script>
 import Verticalsearchbar from "../components/Verticalsearchbar.vue";
+import Navbar from "../components/Navbar.vue";
 
 export default {
   name: "App",
@@ -14,7 +16,8 @@ export default {
   },
   components: {
     Verticalsearchbar,
-  },
+    Navbar
+  }
 };
 </script>
 
