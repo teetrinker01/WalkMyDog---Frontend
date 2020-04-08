@@ -3,6 +3,7 @@ import Listdog from "../views/Listdog.vue"
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import SignUp from "../views/SignUp.vue";
+import Login from "../views/Login.vue";
 
 
 Vue.use(VueRouter);
@@ -21,7 +22,12 @@ const routes = [
   {
     path: "/listdog",
     name: "Listdog",
-    component: Listdog,
+    component: Listdog
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
   }
 ];
 

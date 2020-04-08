@@ -1,7 +1,9 @@
 <template>
   <div>
     <v-app-bar dense flat>
+      <v-spacer></v-spacer>
       <v-toolbar-title> My Dog Walker</v-toolbar-title>
+      <v-spacer></v-spacer>
     </v-app-bar>
     <v-img
       :src="require('../assets/logo.svg')"
@@ -10,17 +12,27 @@
       height="200"
     />
     <h1>Share the love dogs</h1>
-
-    <v-btn color="green" dark>
-      <router-link :to="'signup'">SignUp</router-link>
-
-    </v-btn>
-    <v-btn color="green" dark>
-      LogIn
-    </v-btn>
+    <div class="buttons">
+      <v-btn depressed rounded small color="blue-grey darken-4">
+        <router-link :to="'signup'">SignUp</router-link>
+      </v-btn>
+      <v-btn depressed rounded small color="blue-grey darken-4">
+        <router-link :to="'login'">LogIn</router-link>
+      </v-btn>
+    </div>
   </div>
 </template>
 
 <script>
 export default {};
 </script>
+<style lang="css" scoped>
+h1 {
+  text-align: center;
+  font-weight: 400;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+</style>
