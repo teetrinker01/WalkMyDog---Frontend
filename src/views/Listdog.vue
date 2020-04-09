@@ -1,11 +1,19 @@
 <template>
   <div>
-    <Verticalsearchbar />
+
+    <Navigationbar />
+    <row>
+      <column>
+          <Verticalsearchbar />
+      </column>
+  </row>
   </div>
+
 </template>
 
 <script>
 import Verticalsearchbar from "../components/Verticalsearchbar.vue";
+import Navigationbar from "../components/Navigationbar.vue";
 
 export default {
   name: "App",
@@ -14,6 +22,7 @@ export default {
   },
   components: {
     Verticalsearchbar,
+    Navigationbar,
   },
 };
 </script>
