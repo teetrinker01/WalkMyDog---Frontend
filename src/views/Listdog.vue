@@ -20,16 +20,28 @@
 import Verticalsearchbar from "../components/Verticalsearchbar.vue";
 import Navigationbar from "../components/Navigationbar.vue";
 import Listcard from "../components/Listcard.vue";
+import api from "../services/Api.js";
 
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      dogs: []
+    };
   },
   components: {
     Verticalsearchbar,
     Navigationbar,
     Listcard
+  },
+  methods: {
+    async getAllDogs() {
+      const perros = await api.getAllDogs();
+      this.dogs = perros;
+    }
+  },
+  mounted() {
+    this.getAllDogs();
   }
 };
 </script>
