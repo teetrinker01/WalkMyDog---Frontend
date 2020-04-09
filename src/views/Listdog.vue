@@ -22,8 +22,8 @@ export default {
   },
   components: {
     Verticalsearchbar,
-    Navigationbar,
-  },
+    Navigationbar
+  }
 };
 </script>
 

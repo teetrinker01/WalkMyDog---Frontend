@@ -7,8 +7,8 @@
       <v-card-text>
         <v-form>
           <v-text-field
-            label="Username"
-            v-model="username"
+            label="Name"
+            v-model="name"
             prepend-icon="mdi-account-circle"
             :rules="userRules"
           ></v-text-field>
@@ -22,12 +22,47 @@
 
           <v-text-field
             label="Password"
-            v-model="userPassword"
+            v-model="password"
             :type="showPassword ? 'text' : 'password'"
             prepend-icon="mdi-lock"
             :rules="passwordRule"
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="showPassword = !showPassword"
+          ></v-text-field>
+
+          <v-text-field
+            label="Phone"
+            v-model="phone"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
+          ></v-text-field>
+
+          <v-text-field
+            label="DNI"
+            v-model="dni"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
+          ></v-text-field>
+
+          <v-text-field
+            label="Address"
+            v-model="address"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
+          ></v-text-field>
+
+          <v-text-field
+            label="Zip Code"
+            v-model="zipCode"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
+          ></v-text-field>
+
+          <v-text-field
+            label="City"
+            v-model="city"
+            prepend-icon="mdi-account-circle"
+            :rules="userRules"
           ></v-text-field>
         </v-form>
       </v-card-text>
@@ -46,32 +81,42 @@ export default {
   data() {
     return {
       showPassword: false,
-      userPassword: "Chiken123456",
+      password: "benta12345",
       passwordRule: [
         v => !!v || "Password is required",
         v => v.length >= 10 || "Password must be more than 10 characters"
       ],
-      username: "Chiken",
+      name: "Benta",
       userRules: [v => !!v || "Username is required"],
-      email: "a@a.com",
+      email: "benta@walk.com",
       emailRules: [
         v => !!v || "E-mail is required",
         v => /.+@.+\..+/.test(v) || "E-mail must be valid"
-      ]
+      ],
+      phone: "632541875",
+      dni: "78541254E",
+      address: "Calle Mesa y Lopez",
+      zipCode: "35000",
+      city: "Las Palmas"
     };
   },
   methods: {
     signup() {
       const newUser = {
-        user_name: this.username,
-        user_email: this.email,
-        user_password: this.userPassword
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        city: this.city,
+        zipCode: this.zipCode,
+        address: this.address,
+        dni: this.dni,
+        phone: this.phone
       };
 
       APIServices.signup(newUser)
         .then(response => {
           localStorage.setItem("token", response.token);
-          this.$router.push("/home");
+          this.$router.push("/about");
         })
         .catch(err => console.log(err));
     }

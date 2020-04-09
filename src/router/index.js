@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Listdog from "../views/Listdog.vue"
+import Listdog from "../views/Listdog.vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import SignUp from "../views/SignUp.vue";

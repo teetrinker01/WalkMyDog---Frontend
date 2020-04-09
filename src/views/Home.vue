@@ -16,6 +16,7 @@
       <v-btn depressed rounded small color="blue-grey darken-4">
         <router-link :to="'signup'">SignUp</router-link>
       </v-btn>
+
       <v-btn depressed rounded small color="blue-grey darken-4">
         <router-link :to="'login'">LogIn</router-link>
       </v-btn>
