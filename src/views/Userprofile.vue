@@ -1,18 +1,21 @@
 <template>
   <div>
     <Navigationbar />
+    <UserCard />
     <DogCard />
   </div>
 </template>
 
 <script>
-import DogCard from "../components/DogCard";
 import Navigationbar from "../components/Navigationbar";
+import DogCard from "../components/DogCard";
+import UserCard from "../components/UserCard";
 
 export default {
   components: {
-    DogCard,
-    Navigationbar
+    Navigationbar,
+    UserCard,
+    DogCard
   }
 };
 </script>
