@@ -7,7 +7,9 @@
           <Verticalsearchbar />
         </v-col>
         <v-col>
-          <Listcard />
+          <ul>
+            <Listcard v-for="dog in dogs" :key="dog.id" :dog="dog" />
+          </ul>
         </v-col>
       </v-row>
     </v-container>
@@ -27,9 +29,13 @@ export default {
   components: {
     Verticalsearchbar,
     Navigationbar,
-    Listcard,
-  },
+    Listcard
+  }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+ul {
+  list-style-type: none;
+}
+</style>
