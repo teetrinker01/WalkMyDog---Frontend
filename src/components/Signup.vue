@@ -53,7 +53,7 @@
 
           <v-text-field
             label="Zip Code"
-            v-model="zipCode"
+            v-model="zipcode"
             prepend-icon="mdi-account-circle"
             :rules="userRules"
           ></v-text-field>
@@ -96,7 +96,7 @@ export default {
       phone: "632541875",
       dni: "78541254E",
       address: "Calle Mesa y Lopez",
-      zipCode: "35000",
+      zipcode: "35000",
       city: "Las Palmas"
     };
   },
@@ -107,7 +107,7 @@ export default {
         email: this.email,
         password: this.password,
         city: this.city,
-        zipcode: this.zipCode,
+        zipcode: this.zipcode,
         address: this.address,
         dni: this.dni,
         phone: this.phone
