@@ -1,30 +1,22 @@
 <template>
-  <v-card class="mx-auto" max-width="400">
-    <v-img
-      class="white--text align-end"
-      height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-    >
-      <v-card-title>Top 10 Australian beaches</v-card-title>
-    </v-img>
+  <v-card class="mx-auto" max-width="250">
+    <v-flex justify-center>
+      <v-img
+        class="white--text align-end"
+        height="250px"
+        src="https://images.dog.ceo/breeds/terrier-bedlington/n02093647_3594.jpg"
+      >
+        <v-card-title>Paquito</v-card-title>
+      </v-img>
 
-    <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
+      <v-card-subtitle class="pb-0">Funloving Terrier</v-card-subtitle>
 
-    <v-card-text class="text--primary">
-      <div>Whitehaven Beach</div>
-
-      <div>Whitsunday Island, Whitsunday Islands</div>
-    </v-card-text>
-
-    <v-card-actions>
-      <v-btn color="orange" text>
-        Share
-      </v-btn>
-
-      <v-btn color="orange" text>
-        Explore
-      </v-btn>
-    </v-card-actions>
+      <v-card-actions>
+        <v-btn :style="{ left: '50%', transform: 'translateX(-50%)' }">
+          <span>Walk Me</span>
+        </v-btn>
+      </v-card-actions>
+    </v-flex>
   </v-card>
 </template>
 

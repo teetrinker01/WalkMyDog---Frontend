@@ -1,13 +1,16 @@
 <template>
   <div>
     <Navigationbar />
-    <row>
-      <column>
-        <Verticalsearchbar />
-      </column>
-      <Listcard />
-      <column> </column>
-    </row>
+    <v-container>
+      <v-row>
+        <v-col>
+          <Verticalsearchbar />
+        </v-col>
+        <v-col>
+          <Listcard />
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -24,8 +27,8 @@ export default {
   components: {
     Verticalsearchbar,
     Navigationbar,
-    Listcard
-  }
+    Listcard,
+  },
 };
 </script>
 
