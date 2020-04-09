@@ -119,7 +119,7 @@ export default {
             console.log(response.error);
           } else {
             localStorage.setItem("token", response.token);
-            this.$router.push("/about");
+            this.$router.push("/listdog");
           }
         })
         .catch(err => console.log(err));
