@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navigationbar />
-    <v-container >
+    <v-container>
       <v-row>
         <v-col :cols="3">
           <Verticalsearchbar />
@@ -45,22 +45,22 @@ export default {
   name: "App",
   data() {
     return {
-      dogs: [],
+      dogs: []
     };
   },
   components: {
     Verticalsearchbar,
-    Navigationbar,
+    Navigationbar
   },
   methods: {
     async getAllDogs() {
       const perros = await api.getAllDogs();
       this.dogs = perros;
-    },
+    }
   },
   mounted() {
     this.getAllDogs();
-  },
+  }
 };
 </script>
 
