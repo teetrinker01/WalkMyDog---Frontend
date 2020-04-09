@@ -3,11 +3,12 @@
     <Navigationbar />
     <v-container>
       <v-row>
-        <v-col>
+        <v-col cols="4">
           <Verticalsearchbar />
         </v-col>
         <v-col>
           <v-card
+            cols="4"
             v-for="dog in dogs"
             :key="dog.id"
             :dog="dog"
