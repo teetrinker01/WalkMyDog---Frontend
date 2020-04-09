@@ -13,11 +13,25 @@
     />
     <h1>Share the love dogs</h1>
     <div class="buttons">
-      <v-btn depressed rounded small color="blue-grey darken-4">
+      <v-btn
+        depressed
+        rounded
+        small
+        color="blue-grey darken-4"
+        class="mr-5"
+        width="200px"
+      >
         <router-link :to="'signup'">SignUp</router-link>
       </v-btn>
 
-      <v-btn depressed rounded small color="blue-grey darken-4">
+      <v-btn
+        depressed
+        rounded
+        small
+        color="blue-grey darken-4"
+        class="mr-5"
+        width="200px"
+      >
         <router-link :to="'login'">LogIn</router-link>
       </v-btn>
     </div>
