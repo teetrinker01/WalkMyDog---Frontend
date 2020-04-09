@@ -17,7 +17,7 @@
             <v-img
               class="white--text align-end"
               height="250px"
-              src="https://images.dog.ceo/breeds/terrier-bedlington/n02093647_3594.jpg"
+              :src="dog.img[0]"
             >
               <v-card-title>{{ dog.name }}</v-card-title>
             </v-img>
