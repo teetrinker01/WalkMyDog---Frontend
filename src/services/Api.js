@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: process.env.VUE_APP_API_URL,
+  baseURL: "https://walkmydogbackend.herokuapp.com/api",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
