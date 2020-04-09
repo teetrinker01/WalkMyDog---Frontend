@@ -4,17 +4,14 @@
       <v-container>
         <v-row>
           <v-col>
-            <v-img
-              src="https://images.dog.ceo/breeds/terrier-bedlington/n02093647_3594.jpg"
-            ></v-img>
+            <v-img :src="dog.img[0]"></v-img>
           </v-col>
-
           <v-col>
-            <h1>Name: Snoopy{{ dog.name }}</h1>
-            <h2>Age: 12{{ dog.name }}</h2>
-            <h2>Breed: Caniche{{ dog.name }}</h2>
-            <h2>Good with: Kids{{ dog.name }}</h2>
-            <h2>Rating: 10/10{{ dog.name }}</h2>
+            <h1>Name: {{ dog.name }}</h1>
+            <h2>Size: {{ dog.size }}</h2>
+            <h2>Breed: {{ dog.breed }}</h2>
+            <h2>Good with: {{ dog.goodwith }}</h2>
+            <h2>Character: {{ dog.character }}</h2>
             <v-btn
               depressed
               rounded
@@ -47,7 +44,7 @@ import api from "../services/Api";
 export default {
   data() {
     return {
-      dog: []
+      dog: {}
     };
   },
   methods: {

@@ -17,7 +17,7 @@
             <v-img
               class="white--text align-end"
               height="250px"
-              src="https://images.dog.ceo/breeds/terrier-bedlington/n02093647_3594.jpg"
+              :src="dog.img[0]"
             >
               <v-card-title>{{ dog.name }}</v-card-title>
             </v-img>
@@ -25,9 +25,11 @@
             <v-card-subtitle class="pb-0">{{ dog.breed }}</v-card-subtitle>
 
             <v-card-actions>
-              <v-btn :style="{ left: '50%', transform: 'translateX(-50%)' }">
-                <span>Walk Me</span>
-              </v-btn>
+              <router-link :to="`dogprofile/${encodeURIComponent(dog._id)}`">
+                <v-btn :style="{ left: '50%', transform: 'translateX(-50%)' }">
+                  <span>Walk Me</span>
+                </v-btn>
+              </router-link>
             </v-card-actions>
           </v-card>
         </v-col>

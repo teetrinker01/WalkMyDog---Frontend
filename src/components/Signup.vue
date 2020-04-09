@@ -11,14 +11,12 @@
           prepend-icon="mdi-account-circle"
           :rules="userRules"
         ></v-text-field>
-
         <v-text-field
           label="E-mail"
           v-model="email"
           :rules="emailRules"
           prepend-icon="mdi-email"
         ></v-text-field>
-
         <v-text-field
           label="Password"
           v-model="password"
@@ -28,35 +26,30 @@
           :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append="showPassword = !showPassword"
         ></v-text-field>
-
         <v-text-field
           label="Phone"
           v-model="phone"
           prepend-icon="mdi-account-circle"
           :rules="userRules"
         ></v-text-field>
-
         <v-text-field
           label="DNI"
           v-model="dni"
           prepend-icon="mdi-account-circle"
           :rules="userRules"
         ></v-text-field>
-
         <v-text-field
           label="Address"
           v-model="address"
           prepend-icon="mdi-account-circle"
           :rules="userRules"
         ></v-text-field>
-
         <v-text-field
           label="Zip Code"
           v-model="zipcode"
           prepend-icon="mdi-account-circle"
           :rules="userRules"
         ></v-text-field>
-
         <v-text-field
           label="City"
           v-model="city"
@@ -72,10 +65,8 @@
     </v-card-actions>
   </v-card>
 </template>
-
 <script>
 import APIServices from "../services/Api";
-
 export default {
   data() {
     return {
@@ -111,7 +102,6 @@ export default {
         dni: this.dni,
         phone: this.phone
       };
-
       APIServices.signup(newUser)
         .then(response => {
           if (response.error) {
@@ -134,7 +124,6 @@ export default {
         dni: this.dni,
         phone: this.phone
       };
-
       APIServices.signup(newDogOwner)
         .then(response => {
           if (response.error) {
@@ -149,7 +138,6 @@ export default {
   }
 };
 </script>
-
 <style lang="css" scoped>
 * {
   font-size: 16px;

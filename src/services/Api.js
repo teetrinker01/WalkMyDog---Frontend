@@ -34,8 +34,8 @@ export default {
     const response = await API.get("/dogs");
     return response.data;
   },
-  async getDogById() {
-    const response = await API.get("/dogs/:dogid");
+  async getDogById(dogid) {
+    const response = await API.get(`/dogs/${dogid}`);
     return response.data;
   },
   async updateDogById(updateDog) {

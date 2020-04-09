@@ -37,7 +37,7 @@ const routes = [
     component: About
   },
   {
-    path: "/dogprofile",
+    path: "/dogprofile/:dogid",
     name: "Dogprofile",
     component: Dogprofile
   },
