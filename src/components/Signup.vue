@@ -116,7 +116,7 @@ export default {
       APIServices.signup(newUser)
         .then(response => {
           if (response.error) {
-            alert(response.error)
+            console.log(response.error);
           } else {
             localStorage.setItem("token", response.token);
             this.$router.push("/about");
