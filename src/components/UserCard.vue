@@ -10,11 +10,11 @@
           </v-col>
 
           <v-col>
-            <h1>Name: Snoopy{{ dog.name }}</h1>
-            <h2>Age: 12{{ dog.name }}</h2>
-            <h2>Breed: Caniche{{ dog.name }}</h2>
-            <h2>Good with: Kids{{ dog.name }}</h2>
-            <h2>Rating: 10/10{{ dog.name }}</h2>
+            <h1>Name: Sofía{{ dog.name }}</h1>
+            <h2>Age: 23{{ dog.name }}</h2>
+            <h2>Email: hola@mail.com{{ dog.name }}</h2>
+            <h2>Password: ······{{ dog.name }}</h2>
+            <h2>Location: Las Palmas{{ dog.name }}</h2>
             <v-btn
               depressed
               rounded
@@ -24,7 +24,7 @@
               width="200px"
               d-block
             >
-              <router-link :to="'#'">Choose a Date</router-link>
+              <router-link :to="'#'">Modify</router-link>
             </v-btn>
             <v-btn
               depressed
@@ -34,7 +34,7 @@
               class="mr-5 d-block mt-2"
               width="200px"
             >
-              <router-link :to="'#'">Apply</router-link>
+              <router-link :to="'#'">Delete</router-link>
             </v-btn>
           </v-col>
         </v-row>
@@ -67,7 +67,7 @@ export default {
   font-weight: 400;
 }
 .card {
-  margin-top: 12px;
+  margin-top: 48px;
   display: flex;
   justify-content: center;
 }
