@@ -1,19 +1,20 @@
 <template>
   <div>
-
     <Navigationbar />
     <row>
       <column>
-          <Verticalsearchbar />
+        <Verticalsearchbar />
       </column>
-  </row>
+      <Listcard />
+      <column> </column>
+    </row>
   </div>
-
 </template>
 
 <script>
 import Verticalsearchbar from "../components/Verticalsearchbar.vue";
 import Navigationbar from "../components/Navigationbar.vue";
+import Listcard from "../components/Listcard.vue";
 
 export default {
   name: "App",
@@ -22,7 +23,8 @@ export default {
   },
   components: {
     Verticalsearchbar,
-    Navigationbar
+    Navigationbar,
+    Listcard
   }
 };
 </script>

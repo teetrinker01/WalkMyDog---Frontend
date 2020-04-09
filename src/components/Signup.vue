@@ -107,7 +107,7 @@ export default {
         email: this.email,
         password: this.password,
         city: this.city,
-        zipCode: this.zipCode,
+        zipcode: this.zipCode,
         address: this.address,
         dni: this.dni,
         phone: this.phone
@@ -115,8 +115,12 @@ export default {
 
       APIServices.signup(newUser)
         .then(response => {
-          localStorage.setItem("token", response.token);
-          this.$router.push("/about");
+          if (response.error) {
+            alert(response.error)
+          } else {
+            localStorage.setItem("token", response.token);
+            this.$router.push("/about");
+          }
         })
         .catch(err => console.log(err));
     }
