@@ -60,6 +60,9 @@ export default {
 
       APIServices.login(user)
         .then(response => {
+          if (response.error) {
+            console.log(response.error);
+          }
           localStorage.setItem("token", response.token);
           this.$router.push("/listdog");
         })
