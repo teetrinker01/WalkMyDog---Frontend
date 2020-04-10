@@ -9,7 +9,7 @@
       :src="require('../assets/titledogs2.jpg')"
       class="my-3"
       contain
-      height="600"
+      height="400"
     />
     <h1>Share the love dogs</h1>
     <div class="buttons">
