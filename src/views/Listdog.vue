@@ -4,15 +4,20 @@
     <v-container>
       <v-row>
         <v-col :cols="3">
-          <Verticalsearchbar v-on:filterBySize="filterBySize" />
+          <Verticalsearchbar
+            v-on:filterBySize="filterBySize"
+            v-on:filterByGood="filterByGood"
+            v-on:filterByCharacter="filterByCharacter"
+          />
         </v-col>
         <v-col :cols="9" class="d-flex flex-wrap mx-auto">
           <v-card
-            v-for="dog in filtrado"
+            v-for="dog in todosfiltrados"
             :key="dog.id"
             :dog="dog"
             class="mx-auto"
             max-width="250"
+            max-height="350"
           >
             <v-img
               class="white--text align-end"
@@ -48,7 +53,9 @@ export default {
   data() {
     return {
       dogs: [],
-      size: ""
+      size: "",
+      good: "",
+      character: ""
     };
   },
   components: {
@@ -56,8 +63,20 @@ export default {
     Navigationbar
   },
   computed: {
-    filtrado() {
-      return this.dogs.filter(p => p.size.includes(this.size));
+    todosfiltrados() {
+      let filterdogs = this.dogs;
+      if (this.size !== "") {
+        filterdogs = filterdogs.filter(p => p.size.includes(this.size));
+      }
+      if (this.good !== "") {
+        filterdogs = filterdogs.filter(x => x.goodwith.includes(this.good));
+      }
+      if (this.character !== "") {
+        filterdogs = filterdogs.filter(x =>
+          x.character.includes(this.character)
+        );
+      }
+      return filterdogs;
     }
   },
   methods: {
@@ -67,6 +86,12 @@ export default {
     },
     filterBySize(value) {
       this.size = value;
+    },
+    filterByGood(type) {
+      this.good = type;
+    },
+    filterByCharacter(feel) {
+      this.character = feel;
     }
   },
   mounted() {

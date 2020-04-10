@@ -65,20 +65,52 @@
       <v-container fluid>
         <p>Good with:</p>
         <v-radio-group v-model="goodwith" :mandatory="false">
-          <v-radio label="Children" value="Children"></v-radio>
-          <v-radio label="Cats" value="Cats"></v-radio>
-          <v-radio label="Dogs" value="Dogs"></v-radio>
+          <v-radio
+            label="Children"
+            value="Children"
+            @click="filterByGood('Children')"
+          ></v-radio>
+          <v-radio
+            label="Cats"
+            value="Cats"
+            @click="filterByGood('Cats')"
+          ></v-radio>
+          <v-radio
+            label="Dogs"
+            value="Dogs"
+            @click="filterByGood('Dogs')"
+          ></v-radio>
         </v-radio-group>
       </v-container>
 
       <v-container fluid>
         <p>Character:</p>
         <v-radio-group v-model="character" :mandatory="false">
-          <v-radio label="Active" value="Active"></v-radio>
-          <v-radio label="Laid back" value="Laid back"></v-radio>
-          <v-radio label="Lazy" value="Lazy"></v-radio>
-          <v-radio label="Obedient" value="Obedient"></v-radio>
-          <v-radio label="Wild" value="Wild"></v-radio>
+          <v-radio
+            label="Active"
+            value="Active"
+            @click="filterByCharacter('Active')"
+          ></v-radio>
+          <v-radio
+            label="Laid back"
+            value="Laid back"
+            @click="filterByCharacter('Laid back')"
+          ></v-radio>
+          <v-radio
+            label="Lazy"
+            value="Lazy"
+            @click="filterByCharacter('Lazy')"
+          ></v-radio>
+          <v-radio
+            label="Obedient"
+            value="Obedient"
+            @click="filterByCharacter('Obedient')"
+          ></v-radio>
+          <v-radio
+            label="Wild"
+            value="Wild"
+            @click="filterByCharacter('Wild')"
+          ></v-radio>
         </v-radio-group>
       </v-container>
     </v-list>
@@ -97,6 +129,12 @@ export default {
   methods: {
     filterBySize(value) {
       this.$emit("filterBySize", value);
+    },
+    filterByGood(type) {
+      this.$emit("filterByGood", type);
+    },
+    filterByCharacter(feel) {
+      this.$emit("filterByCharacter", feel);
     }
   }
 };
