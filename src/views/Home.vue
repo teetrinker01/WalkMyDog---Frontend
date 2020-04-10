@@ -13,33 +13,27 @@
     />
     <h1>Share the love dogs</h1>
     <div class="buttons">
-      <v-btn
-        depressed
-        rounded
-        small
-        color="blue-grey darken-4"
-        class="mr-5"
-        width="200px"
-      >
-        <router-link :to="'signup'">SignUp</router-link>
+      <v-btn color="info" @click="gotosignup()" class="ma-3">
+        <span>Sign up</span>
       </v-btn>
-
-      <v-btn
-        depressed
-        rounded
-        small
-        color="blue-grey darken-4"
-        class="mr-5"
-        width="200px"
-      >
-        <router-link :to="'login'">LogIn</router-link>
+      <v-btn color="info" @click="gotologin()" class="ma-3">
+        <span>Login</span>
       </v-btn>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    gotosignup() {
+      this.$router.push(`/signup`);
+    },
+    gotologin() {
+      this.$router.push(`/login`);
+    },
+  },
+};
 </script>
 <style lang="css" scoped>
 h1 {

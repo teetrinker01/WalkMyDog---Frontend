@@ -30,11 +30,12 @@
             <v-card-subtitle class="pb-0">{{ dog.breed }}</v-card-subtitle>
 
             <v-card-actions>
-              <router-link :to="`dogprofile/${encodeURIComponent(dog._id)}`">
-                <v-btn :style="{ left: '50%', transform: 'translateX(-50%)' }">
-                  <span>Walk Me</span>
-                </v-btn>
-              </router-link>
+              <v-btn color="info"
+                @click="walkMe(dog._id)"
+                :style="{ left: '50%', transform: 'translateX(-50%)' }"
+              >
+                <span>Walk Me</span>
+              </v-btn>
             </v-card-actions>
           </v-card>
         </v-col>
@@ -55,29 +56,29 @@ export default {
       dogs: [],
       size: "",
       good: "",
-      character: ""
+      character: "",
     };
   },
   components: {
     Verticalsearchbar,
-    Navigationbar
+    Navigationbar,
   },
   computed: {
     todosfiltrados() {
       let filterdogs = this.dogs;
       if (this.size !== "") {
-        filterdogs = filterdogs.filter(p => p.size.includes(this.size));
+        filterdogs = filterdogs.filter((p) => p.size.includes(this.size));
       }
       if (this.good !== "") {
-        filterdogs = filterdogs.filter(x => x.goodwith.includes(this.good));
+        filterdogs = filterdogs.filter((x) => x.goodwith.includes(this.good));
       }
       if (this.character !== "") {
-        filterdogs = filterdogs.filter(x =>
+        filterdogs = filterdogs.filter((x) =>
           x.character.includes(this.character)
         );
       }
       return filterdogs;
-    }
+    },
   },
   methods: {
     async getAllDogs() {
@@ -92,11 +93,14 @@ export default {
     },
     filterByCharacter(feel) {
       this.character = feel;
+    },
+    walkMe(id) {
+      this.$router.push(`/dogprofile/${id}`);
     }
   },
   mounted() {
     this.getAllDogs();
-  }
+  },
 };
 </script>
 

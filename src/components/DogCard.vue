@@ -12,27 +12,15 @@
             <h2>Breed: {{ dog.breed }}</h2>
             <h2>Good with: {{ dog.goodwith }}</h2>
             <h2>Character: {{ dog.character }}</h2>
-            <v-btn
-              depressed
-              rounded
-              small
-              color="blue-grey darken-4"
-              class="mr-5 d-block mt-5"
-              width="200px"
-              d-block
-            >
-              <router-link :to="'#'">Choose a Date</router-link>
-            </v-btn>
-            <v-btn
-              depressed
-              rounded
-              small
-              color="blue-grey darken-4"
-              class="mr-5 d-block mt-2"
-              width="200px"
-            >
-              <router-link :to="'#'">Apply</router-link>
-            </v-btn>
+
+            <div class="buttons">
+              <v-btn color="info" @click="gotosignup()" class="ma-3">
+                <span>Choose a date</span>
+              </v-btn>
+              <v-btn color="info" @click="gotologin()" class="ma-3">
+                <span>Request</span>
+              </v-btn>
+            </div>
           </v-col>
         </v-row>
       </v-container>
@@ -44,18 +32,18 @@ import api from "../services/Api";
 export default {
   data() {
     return {
-      dog: {}
+      dog: {},
     };
   },
   methods: {
     async getDogById() {
       const dogid = await api.getDogById(this.$route.params.dogid);
       return (this.dog = dogid);
-    }
+    },
   },
   mounted() {
     this.getDogById();
-  }
+  },
 };
 </script>
 <style lang="css" scoped>
@@ -70,6 +58,5 @@ export default {
 }
 span {
   display: block;
-  margin-top: 12px;
 }
 </style>
