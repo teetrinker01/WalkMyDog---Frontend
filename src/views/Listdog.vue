@@ -1,14 +1,14 @@
 <template>
   <div>
     <Navigationbar />
-    <v-container >
+    <v-container>
       <v-row>
         <v-col :cols="3">
-          <Verticalsearchbar />
+          <Verticalsearchbar v-on:filterBySize="filterBySize" />
         </v-col>
         <v-col :cols="9" class="d-flex flex-wrap mx-auto">
           <v-card
-            v-for="dog in dogs"
+            v-for="dog in filtrado"
             :key="dog.id"
             :dog="dog"
             class="mx-auto"
@@ -48,21 +48,30 @@ export default {
   data() {
     return {
       dogs: [],
+      size: ""
     };
   },
   components: {
     Verticalsearchbar,
-    Navigationbar,
+    Navigationbar
+  },
+  computed: {
+    filtrado() {
+      return this.dogs.filter(p => p.size.includes(this.size));
+    }
   },
   methods: {
     async getAllDogs() {
       const perros = await api.getAllDogs();
       this.dogs = perros;
     },
+    filterBySize(value) {
+      this.size = value;
+    }
   },
   mounted() {
     this.getAllDogs();
-  },
+  }
 };
 </script>
 

@@ -44,9 +44,21 @@
       <v-container fluid>
         <p>Dog Size:</p>
         <v-radio-group v-model="size" :mandatory="false">
-          <v-radio label="Small" value="Small"></v-radio>
-          <v-radio label="Medium" value="Medium"></v-radio>
-          <v-radio label="Large" value="Large"></v-radio>
+          <v-radio
+            label="Small"
+            value="Small"
+            @click="filterBySize('Small')"
+          ></v-radio>
+          <v-radio
+            label="Medium"
+            value="Medium"
+            @click="filterBySize('Medium')"
+          ></v-radio>
+          <v-radio
+            label="Large"
+            value="Large"
+            @click="filterBySize('Large')"
+          ></v-radio>
         </v-radio-group>
       </v-container>
 
@@ -81,7 +93,12 @@ export default {
     size: "",
     goodwith: "",
     character: ""
-  })
+  }),
+  methods: {
+    filterBySize(value) {
+      this.$emit("filterBySize", value);
+    }
+  }
 };
 </script>
 
