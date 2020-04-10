@@ -1,7 +1,11 @@
 <template>
   <v-card color="grey lighten-4" flat height="50px" tile>
     <v-toolbar dense>
-      <v-toolbar-title><h3 class="font-weight-bold">Walk My Dog</h3></v-toolbar-title>
+      <v-toolbar-title>
+        <router-link :to="`/listdog`">
+          <h3 class="font-weight-bold">Walk My Dog</h3>
+        </router-link>
+      </v-toolbar-title>
 
       <v-spacer></v-spacer>
 
