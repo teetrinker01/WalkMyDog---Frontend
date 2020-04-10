@@ -2,14 +2,14 @@
   <div>
     <v-app-bar dense flat>
       <v-spacer></v-spacer>
-      <v-toolbar-title> My Dog Walker</v-toolbar-title>
+      <v-toolbar-title><h1>My Dog Walker</h1></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
     <v-img
-      :src="require('../assets/logo.svg')"
+      :src="require('../assets/titledogs2.jpg')"
       class="my-3"
       contain
-      height="200"
+      height="600"
     />
     <h1>Share the love dogs</h1>
     <div class="buttons">
