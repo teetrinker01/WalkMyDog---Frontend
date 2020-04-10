@@ -14,10 +14,10 @@
             <h2>Character: {{ dog.character }}</h2>
 
             <div class="buttons">
-              <v-btn color="info" @click="gotosignup()" class="ma-3">
+              <v-btn v-model="date" class="ma-3">
                 <span>Choose a date</span>
               </v-btn>
-              <v-btn color="info" @click="gotologin()" class="ma-3">
+              <v-btn color="info" @click="newrequest(dog)" class="ma-3">
                 <span>Request</span>
               </v-btn>
             </div>
@@ -33,6 +33,7 @@ export default {
   data() {
     return {
       dog: {},
+      date: ""
     };
   },
   methods: {
@@ -40,10 +41,29 @@ export default {
       const dogid = await api.getDogById(this.$route.params.dogid);
       return (this.dog = dogid);
     },
+    newrequest() {
+      const newRequest = {
+        owner: this.owner,
+        walker: "hola",
+        date: this.date,
+        status: { pending: true }
+      };
+      api
+        .createRequest(newRequest)
+        .then(response => {
+          if (response.error) {
+            console.log(response.error);
+          } else {
+            this.$router.push("/listdog");
+          }
+        })
+        .catch(err => console.log(err));
+    }
   },
+
   mounted() {
     this.getDogById();
-  },
+  }
 };
 </script>
 <style lang="css" scoped>

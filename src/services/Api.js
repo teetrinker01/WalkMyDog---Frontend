@@ -48,8 +48,8 @@ export default {
     const response = await API.delete("/dogs/:dogid");
     return response.data;
   },
-  async createRequest(newRequest) {
-    const response = await API.post("/dogs/:dogid/request", {
+  async createRequest(dogid, newRequest) {
+    const response = await API.post(`/dogs/${dogid}/request`, {
       ...newRequest
     });
     return response.data;
