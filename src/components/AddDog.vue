@@ -5,50 +5,32 @@
     </v-card-title>
     <v-card-text>
       <v-form>
-        <v-text-field
-          label="Name"
-          v-model="name"
-          :rules="userRules"
-        ></v-text-field>
-        <v-text-field
-          label="Age"
-          v-model="age"
-          :rules="userRules"
-        ></v-text-field>
+        <v-text-field label="Name" v-model="name"></v-text-field>
         <v-select
           label="Size"
-          v-model="select"
+          v-model="sizeselect"
           :items="size"
           :error-messages="errors"
           data-vv-name="select"
           required
         ></v-select>
-        <v-text-field
-          label="Breed"
-          v-model="name"
-          :rules="userRules"
-        ></v-text-field>
+        <v-text-field label="Breed" v-model="breed"></v-text-field>
         <v-select
           label="Good with:"
-          v-model="select"
-          :items="goodWith"
+          v-model="goodwithselect"
+          :items="goodwith"
           :error-messages="errors"
           data-vv-name="select"
           required
         ></v-select>
         <v-select
           label="Character"
-          v-model="select"
+          v-model="characterselect"
           :items="character"
           :error-messages="errors"
           data-vv-name="select"
           required
         ></v-select>
-        <v-text-field
-          label="Available"
-          v-model="age"
-          :rules="userRules"
-        ></v-text-field>
         <v-checkbox
           d-inline
           v-for="(day, index) in week"
@@ -61,23 +43,26 @@
     </v-card-text>
     <v-divider></v-divider>
     <v-card-actions>
-      <v-btn color="info" @click="signup">Signup</v-btn>
       <v-btn color="info" @click="addDog">Add Dog</v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import APIServices from "../services/Api";
+
 export default {
   data() {
     return {
       name: "",
-      age: "",
-      select: null,
+      sizeselect: "",
       size: ["Small", "Medium", "Large"],
       breed: "",
-      goodWith: ["Children", "Cats", "Dogs"],
+      goodwithselect: "",
+      goodwith: ["Children", "Cats", "Dogs"],
+      characterselect: "",
       character: ["Active", "Laid Back", "Lazy", "Obedient", "Wild"],
+      weekselect: "",
       week: [
         {
           name: "Monday",
@@ -110,6 +95,26 @@ export default {
       ],
       checkbox: null
     };
+  },
+  methods: {
+    addDog() {
+      const newDog = {
+        name: this.name,
+        size: this.sizeselect,
+        breed: this.breed,
+        goodWith: this.goodwithselect,
+        character: this.characterselect
+      };
+      APIServices.createDog(newDog)
+        .then(response => {
+          if (response.error) {
+            console.log(response.error);
+          } else {
+            this.$router.push("/listdog");
+          }
+        })
+        .catch(err => console.log(err));
+    }
   }
 };
 </script>

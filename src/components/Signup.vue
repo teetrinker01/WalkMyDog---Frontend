@@ -61,7 +61,7 @@
     <v-divider></v-divider>
     <v-card-actions>
       <v-btn color="info" @click="signup">Signup</v-btn>
-      <v-btn color="info" @click="addDog">Add Dog</v-btn>
+      <v-btn color="info" @click="addDogOwner">Add Dog</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -71,23 +71,23 @@ export default {
   data() {
     return {
       showPassword: false,
-      password: "benta12345",
+      password: "",
       passwordRule: [
         v => !!v || "Password is required",
         v => v.length >= 10 || "Password must be more than 10 characters"
       ],
-      name: "Benta",
+      name: "",
       userRules: [v => !!v || "Username is required"],
-      email: "benta@walk.com",
+      email: "",
       emailRules: [
         v => !!v || "E-mail is required",
         v => /.+@.+\..+/.test(v) || "E-mail must be valid"
       ],
-      phone: "632541875",
-      dni: "78541254E",
-      address: "Calle Mesa y Lopez",
-      zipcode: "35000",
-      city: "Las Palmas"
+      phone: "",
+      dni: "",
+      address: "",
+      zipcode: "",
+      city: ""
     };
   },
   methods: {
@@ -113,7 +113,7 @@ export default {
         })
         .catch(err => console.log(err));
     },
-    addDog() {
+    addDogOwner() {
       const newDogOwner = {
         name: this.name,
         email: this.email,
