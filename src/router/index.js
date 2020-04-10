@@ -7,6 +7,7 @@ import Login from "../views/Login.vue";
 import About from "../views/About.vue";
 import Dogprofile from "../views/Dogprofile.vue";
 import Userprofile from "../views/Userprofile.vue";
+import Adddog from "../views/Adddog.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: "/userprofile",
     name: "Userprofile",
     component: Userprofile
+  },
+  {
+    path: "/adddog",
+    name: "Adddog",
+    component: Adddog
   }
 ];
 

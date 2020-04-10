@@ -61,7 +61,7 @@
     <v-divider></v-divider>
     <v-card-actions>
       <v-btn color="info" @click="signup">Signup</v-btn>
-      <v-btn color="info" @click="signup">Add Dog</v-btn>
+      <v-btn color="info" @click="addDog">Add Dog</v-btn>
     </v-card-actions>
   </v-card>
 </template>
